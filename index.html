@@ -8,6 +8,37 @@
     <title>Dulneth Damsira</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      #name{
+        width : 9ch;
+        color: white;
+        text-wrap: nowrap;
+        overflow: hidden;
+        animation: typing 2s steps(20) alternate;
+      }
+      #name1{
+        width : 9ch;
+        color: rgb(156, 113, 206);
+        text-wrap: nowrap;
+        overflow: hidden;
+        opacity: 0;
+        animation: typing 2s steps(20) alternate;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+      }
+      @keyframes typing {
+        from { 
+          width: 0ch; 
+        }
+        to {
+          opacity: 1;
+          width: 9ch;
+        }
+      }
+      html{
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
   <body data-theme="dark" class="relative isolate overflow-x-hidden min-h-screen flex flex-col bg-slate-950 text-slate-100">
     <div id="loading-overlay" class="fixed inset-0 bg-slate-900/80 z-50 items-center justify-center">
@@ -41,8 +72,9 @@
       <section id="home-hero" class="relative max-w-6xl mx-auto px-4 pt-8 pb-16 grid lg:grid-cols-[1fr_auto_1fr] gap-10 items-center fade-in">
         <article class="space-y-6 -mt-6 md:-mt-12">
           <h1 id="hero-headline" class="text-5xl md:text-6xl lg:text-7xl font-semibold leading-[0.95] tracking-[-0.04em] max-w-xl">
-            <span>Hi, I'm</span>
-            <span class="block text-indigo-400">Dulneth</span>
+            
+            <span id="name" class="block text-indigo-400">Dulneth</span>
+            <pre><span id="name1" class="block text-indigo-400">  Damsira</span></pre>
           </h1>
           <div class="h-1.5 w-24 rounded-full bg-indigo-500/80"></div>
           <p id="hero-description" class="text-sm md:text-base text-slate-300 max-w-md leading-7">
@@ -288,8 +320,17 @@
 
               <!-- <h2 class="text-xl font-semibold mb-2">Social</h2> -->
               <ul id="contact-social-links" class="flex flex-wrap gap-4 text-sm text-indigo-400">
-                <li><a href="https://github.com/dulnethdms" target="_blank" rel="noopener">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/dulneth-damsira/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li>
+                  <a href="https://github.com/dulnethdms" target="_blank" rel="noopener">
+                    <span>GitHub</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/dulneth-damsira/" target="_blank" rel="noopener">
+                    <span class="social-icon social-icon--linkedin" aria-hidden="true">in</span>
+                    <span>LinkedIn</span>
+                  </a>
+                </li>
                 <!--<li><a href="https://twitter.com/yourusername" target="_blank" rel="noopener">Twitter</a></li> -->
               </ul>
             </section>
